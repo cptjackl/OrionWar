@@ -2,8 +2,12 @@ namespace OrionWar.Game.Entities;
 
 public class Star
 {
-    public required Guid Id { get; set; }
+    public required Guid StarId { get; set; }
+    public required Guid GameSessionId { get; set; }
+    public required GameSession GameSession { get; set; }
     public Player? Owner { get; set; }
+    public required Guid OwnerId { get; set; }
+    public bool IsOwned { get { return Owner != null; } }
     
     //Constant Properties
     public int PositionX { get; set; }
@@ -17,7 +21,5 @@ public class Star
     public bool WarpGate { get; set; }
 
     //Current Military Strength
-    public int Military { get; set; }
-
-    public bool IsOwned { get { return Owner != null; } }
+    public int MilitaryStrength { get; set; }
 }

@@ -2,11 +2,13 @@ namespace OrionWar.Game.Entities;
 
 public class Player
 {
-    public required Guid Id { get; set; }
+    public required Guid PlayerId { get; set; }
+    public required Guid GameSessionId { get; set; }
+    public required GameSession GameSession { get; set; }
     public required string Name { get; set; }
     public required string Color { get; set; }
     public bool IsAlive { get; set; }
-    public required Player[] Allies { get; set; }
+    public required List<Player> Allies { get; set; } = [];
 
     //Technology Levels
     public int WeaponsLevel { get; set; }

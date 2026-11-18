@@ -1,5 +1,5 @@
 using OrionWar.Api;
-
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +8,10 @@ builder.Services.AddOpenApi();
 builder.Services.AddProblemDetails();
 builder.Services.AddHealthChecks();
 builder.Services.Configure<GameOptions>(builder.Configuration.GetSection(GameOptions.SectionName));
+builder.Services.AddDbContext<GameDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Default"))
+);
+
 
 var app = builder.Build();
 
