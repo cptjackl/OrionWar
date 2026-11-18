@@ -18,4 +18,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrionWar.Game\OrionWar.Game.csproj" />
+    <ProjectReference Include="..\OrionWar.Api\OrionWar.Api.csproj" />
+  </ItemGroup>
+
 </Project>
