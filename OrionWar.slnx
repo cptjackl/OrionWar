@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="OrionWar.Api/OrionWar.Api.csproj" />
+  <Project Path="OrionWar.Game/OrionWar.Game.csproj" />
+  <Project Path="OrionWar.Tests/OrionWar.Tests.csproj" />
+</Solution>

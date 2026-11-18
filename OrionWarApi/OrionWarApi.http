@@ -1,6 +1,0 @@
-@OrionWarApi_HostAddress = http://localhost:5064
-
-GET {{OrionWarApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
