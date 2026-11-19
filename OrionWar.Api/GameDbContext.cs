@@ -18,7 +18,6 @@ public class GameDbContext : IdentityDbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Player>().HasMany(player => player.Allies).WithMany();
         modelBuilder.Entity<Star>().Ignore(star => star.IsOwned);
         modelBuilder.Entity<GameSession>().OwnsOne(gameSession => gameSession.Settings);
     }

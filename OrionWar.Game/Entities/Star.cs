@@ -3,10 +3,13 @@ namespace OrionWar.Game.Entities;
 public class Star
 {
     public required Guid StarId { get; set; }
+    
     public required Guid GameSessionId { get; set; }
     public required GameSession GameSession { get; set; }
+
+    public required Guid? OwnerId { get; set; }    
     public Player? Owner { get; set; }
-    public required Guid OwnerId { get; set; }
+    
     public bool IsOwned { get { return Owner != null; } }
     
     //Constant Properties
