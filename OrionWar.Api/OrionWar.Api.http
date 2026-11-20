@@ -1,5 +1,29 @@
-@OrionWar.Api_HostAddress = http://localhost:5082
+@baseUrl = http://localhost:5082
+@accessToken = 
+@refreshToken = 
 
+{
+  "email": "commander@example.test",
+  "password": "Strong-Passphrase-123!"
+}
 
+### Log in
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
 
-###
+{
+  "email": "commander@example.test",
+  "password": "Strong-Passphrase-123!"
+}
+
+### Rotate refresh token
+POST {{baseUrl}}/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### Get authenticated account
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{accessToken}}
